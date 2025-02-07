@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Use <base href="./"> if your site is hosted at root OR you just want relative paths. 
-       If you know your site is definitely at "/" (root), <base href="/"> is also fine. 
-       But if it’s a subpath (like /myapp/), adjust accordingly. -->
-  <base href="./">
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -13,43 +23,32 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Facebook">
+  <meta name="apple-mobile-web-app-title" content="facebook">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>Facebook Support</title>
-  <!-- The web app manifest for adding your app to the home screen -->
   <link rel="manifest" href="manifest.json">
 
-  <!-- 
-    The value below is injected by flutter build, do not touch in your source code.
-    If you want to override, pass the `--pwa-strategy` or a custom service worker 
-    to the build.
-  -->
   <script>
+    // The value below is injected by flutter build, do not touch.
     const serviceWorkerVersion = "2655113037";
   </script>
-
-  <!-- This script is required to bootstrap the Flutter web engine. 
-       Make sure flutter.js is in the same folder as index.html. -->
+  <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 <body>
   <script>
-    // On page load, ask Flutter to initialize
     window.addEventListener('load', function(ev) {
+      // Download main.dart.js
       _flutter.loader.loadEntrypoint({
-        // Service Worker config. If you do NOT want a service worker,
-        // either remove this block or set "serviceWorker: null".
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
-        // onEntrypointLoaded is called when main.dart.js is done loading:
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
-            // Finally, run your Flutter app:
             appRunner.runApp();
           });
         }

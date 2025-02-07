@@ -9436,7 +9436,7 @@ q=(k==null?$.a2p=$.at0():k).PY(0,"[DEFAULT]")
 k=new A.od(q)
 A.oV(q,$.Xs(),!0)
 $.aOD=k
-k=$.aPB=A.aGj(k,"https://help-contact-inbox-default-rtdb.firebaseio.com/")
+k=$.aPB=A.aGj(k,"https://my-awsone-project-id-console-default-rtdb.firebaseio.com/")
 p=k.e
 if(p==null){p=k.d
 o=$.aq3
